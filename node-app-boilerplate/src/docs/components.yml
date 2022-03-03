@@ -1,0 +1,37 @@
+components:
+  schemas:
+    Records:
+      type: object
+      properties:
+        startDate:
+          type: string
+        endDate:
+          type: string
+        minCount:
+          type: string
+        maxCount:
+          type: string
+      example:
+        startDate: "2016-02-02"
+        endDate: "2018-02-02"
+        minCount: 2700
+        maxCount: 3000
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: number
+        message:
+          type: string
+
+  responses:
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          example:
+            code: 404
+            message: Not found
